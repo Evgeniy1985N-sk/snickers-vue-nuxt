@@ -31,3 +31,10 @@ body {
   margin-inline: auto;
   padding-inline: var(--offset);
 }
+
+.title {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}

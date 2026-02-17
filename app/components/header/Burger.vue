@@ -1,18 +1,18 @@
 <script setup lang="ts">
 interface Props {
-  class?: string
+  customClass?: string
 }
 const props = defineProps<Props>()
 </script>
 
 
 <template>
-  <button :class="props.class" class="burger">
+  <button :class="props.customClass" class="burger">
     <i class="burger__line">...</i>
   </button>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/assets/styles/vars";
 
 .burger {

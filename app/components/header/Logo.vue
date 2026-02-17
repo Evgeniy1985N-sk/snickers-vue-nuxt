@@ -6,7 +6,7 @@
   </NuxtLink>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/assets/styles/vars";
 
 .logo {

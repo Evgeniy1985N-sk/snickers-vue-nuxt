@@ -6,16 +6,17 @@
 
         <HeaderLogo />
 
-        <HeaderMenu class="header__menu" />
+        <HeaderMenu customClass="header__menu" />
 
-        <HeaderBurger class="header__burger" />
+        <HeaderBurger customClass="header__burger" />
 
       </div>
     </div>
+    
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/assets/styles/vars";
 
 .header {
@@ -32,7 +33,7 @@
   }
 
   @media (min-width: vars.$md) {
-    padding: 1rem 0;
+    padding: 1.25rem 0;
 
     &__menu {
       display: block;

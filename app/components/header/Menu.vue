@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  class?: string
+  customClass?: string
 }
 const props = defineProps<Props>()
 
@@ -33,7 +33,7 @@ const items = ref([
 </script>
 
 <template>
-  <div :class="props.class" class="menu">
+  <div :class="props.customClass" class="menu">
     <ul class="menu__list">
       <li v-for="(item, i) in items"  class="menu__list-item" :key="i">
         <NuxtLink :to="item.src"  class="menu__list-link">
@@ -44,7 +44,7 @@ const items = ref([
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/assets/styles/vars";
 
 .menu {
