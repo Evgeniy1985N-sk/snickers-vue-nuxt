@@ -11,10 +11,11 @@ const props = defineProps({
     type: String
   },
 })
+defineEmits(['handleClick'])
 </script>
 
 <template>
-  <component v-if="!props.href" :is="props.tag" :class="props.customClass" class="button">
+  <component @click="$emit('handleClick')" v-if="!props.href" :is="props.tag" :class="props.customClass" class="button">
     <slot />
   </component>
   <NuxtLink v-else :to="props.href" :class="props.customClass" class="button">
@@ -36,6 +37,7 @@ const props = defineProps({
   text-decoration: none;
   color: inherit;
   background: transparent;
+  border: 0;
   cursor: pointer;
 
   &_theme {
@@ -47,10 +49,18 @@ const props = defineProps({
     }
 
     &_primary {
-      padding: .625rem 1.781rem;
+      padding: .625rem 1.5rem;
       border: 1px solid vars.$color-2;
     }
 
+  }
+
+  &_align {
+
+    &_center {
+      margin-inline: auto;
+    }
+    
   }
 
 }

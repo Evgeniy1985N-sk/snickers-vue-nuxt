@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <component :is="props.tag" :class="props.customClass" class="title">
+  <component :is="props.tag" class="heading" :class="props.customClass">
     <slot />
   </component>
 </template>
@@ -21,14 +21,34 @@ const props = defineProps({
 @use "@/assets/styles/vars";
 
 
-.title {
-  font-size: 26px;
-  font-weight: medium;
+.heading {
+  font-weight: 500;
   line-height: 1.1;
   text-transform: uppercase;
 
-  @media (min-width: vars.$md) {
-    font-size: 4rem;
+  &_align_center {
+    text-align: center;
   }
+
+  &_size_xl {
+    font-size: 1.625rem;
+  }
+
+  &_size_l {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: vars.$md) {
+
+    &_size_xl {
+      font-size: 4rem;
+    }
+
+    &_size_l {
+      font-size: 2.625rem;
+    }
+
+  }
+
 }
 </style>

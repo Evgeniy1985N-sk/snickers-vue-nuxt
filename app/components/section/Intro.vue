@@ -2,12 +2,12 @@
 </script>
 
 <template>
-  <section class="intro">
-    <div class="intro__container container">
+  <section class="section-intro">
+    <div class="section-intro__container container">
 
-      <UiTitle custom-class="intro__title">
+      <UiHeading custom-class="section-intro__heading heading_size_xl">
         тестовое задание
-      </UiTitle>
+      </UiHeading>
 
       <UiButton href="/catalog" custom-class="button_theme_accent">
         В каталог
@@ -20,7 +20,7 @@
 <style lang="scss" scoped>
 @use "@/assets/styles/vars";
 
-.intro {
+.section-intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,14 +31,14 @@
     gap: 2.5rem;
   }
 
-  &__title {
+  &__heading {
     max-width: 220px;
   }
 
   @media (min-width: vars.$md) {
     min-height: calc(100vh - 80px);
     
-    &__title {
+    &__heading {
       max-width: 100%;
     }
   }
