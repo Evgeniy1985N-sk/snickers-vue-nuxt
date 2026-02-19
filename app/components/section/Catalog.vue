@@ -66,15 +66,15 @@ onMounted(() => {
         <ProductCard v-for="item in products" :item="item" :key="item.id" />
       </div>
 
-      <div class="section-catalog__button-wrapper">
+      <div v-if="hasMoreProdusts" class="section-catalog__button-wrapper">
         <p v-if="isError">
           Произошла ошибка, попробуйте позже
         </p>
         <UiButton @handle-click="loadMore" custom-class="button_theme_primary button_align_center">
-          <span v-if="!isLoading">
+          <span v-if="!isLoading && !isError">
             Показать еще
           </span>
-          <span v-else>
+          <span v-if="isLoading && !isError">
             Загрузка...
           </span>
           <span v-if="isError">
